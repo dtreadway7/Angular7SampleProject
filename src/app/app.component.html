@@ -12,17 +12,40 @@
 
 <router-outlet></router-outlet> -->
 
+<div class=".background">
+
+  <div style="display: flex" class="">
+
+    <div class="list-1" cdkDropList  [cdkDropListData]="artists"
+        [cdkDropListConnectedTo]="secondList" #firstList="cdkDropList"
+        (cdkDropListDropped)="drop($event)" style="width: 30%">
+
+        <div *ngFor="let artist of artists" class="pop" cdkDrag>{{artist}}</div>
+
+    </div>
+
+    <div class="example-list" cdkDropList cdkDropListOrientation="horizontal" [cdkDropListData]="alteArtists"
+      [cdkDropListConnectedTo]="firstList" #secondList="cdkDropList"
+      (cdkDropListDropped)="drop($event)" style="width: 90%">
+
+      <div  *ngFor="let artist of alteArtists" class="example-box" cdkDrag>{{artist}}</div>
+
+    </div>
 
 
-<div style="display: flex" class=".background">
-  <div cdkDropList  [cdkDropListData]="artists"
-  [cdkDropListConnectedTo]="secondList" #firstList="cdkDropList"
-  (cdkDropListDropped)="drop($event)" style="width: 30%">
-  <div  *ngFor="let artist of artists" class="pop" cdkDrag>{{artist}}</div>
+
+    <!-- <div cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let timePeriod of timePeriods" cdkDrag>{{timePeriod}}</div>
+    </div> -->
+
+    <!-- <div class="dropTarget-1" cdkDropList [cdkDropListData]="alteArtists"
+      [cdkDropListConnectedTo]="firstList" #secondList="cdkDropList"
+      (cdkDropListDropped)="drop($event)" style="width: 30%">
+
+      <div  *ngFor="let artist of alteArtists" class="pop" cdkDrag>{{artist}}</div>
+
+    </div> -->
+
+
   </div>
-  <div cdkDropList [cdkDropListData]="alteArtists"
-  [cdkDropListConnectedTo]="firstList" #secondList="cdkDropList"
-   (cdkDropListDropped)="drop($event)" style="width: 30%">
-  <div  *ngFor="let artist of alteArtists" class="pop" cdkDrag>{{artist}}</div>
-  </div>
-  </div>
+</div>
