@@ -19,7 +19,8 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 })
 
 export class AppComponent {
-  artists = [];
+
+  const artists = [];
   // artists = [
   //   'Function 1',
   //   'Function 3',
@@ -27,18 +28,39 @@ export class AppComponent {
   //   'Function 7'
   // ];
 
-  alteArtists = [
-    'Function 2',
-    'Function 4',
-    'Function 6',
-    'Function 8'
+   const alteArtists = [
+    [['Func 1']],
+    [['a']],
+    [['b']],
+    [['c']],
+    // [['Func 2'],['a'],['b']],
+    // [['Func 3'],['b']],
+    // [['Func 4'],['b'],['c']],
+    // [['Func 2']],
+    // [['Func 5'],['a'],['b'],['c']],
+    // [['Func 3']]
   ];
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer !== event.container) {
       transferArrayItem(event.previousContainer.data,event.container.data,
         event.previousIndex, event.currentIndex);
-        console.log('trasnferrred', event);
+        var thisData = event.container.data;
+        if(thisData.length > 1) {
+            console.log('trasnferrred', thisData);
+            console.log('newData1', newData);
+            var newData =  event.container.data.concat(thisData);
+            this.alteArtists.map(o => {
+              return { newData };
+        });
+
+        //  var newData =  event.container.data.concat(thisData);
+        //  alteArtists.push(newData);
+         console.log('newData2', newData);
+         console.log('newArray', this.alteArtists);
+
+        }
+
 
 
     } else {
