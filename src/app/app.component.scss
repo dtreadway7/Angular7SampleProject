@@ -1,0 +1,22 @@
+.background{
+  background-color: #000099 !important;
+}
+
+.pop{
+  height: 50px;
+  margin-left: 20px;
+  border: 1px solid #ffffff;
+  background: #000099;
+  display: flex;
+  color: #ffffff;
+  justify-content: center;
+  align-items: center;
+
+}
+.cdk-drop-list-dragging .cdk-drag {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.cdk-drag-animating {
+  transition: transform 300ms cubic-bezier(0, 0, 0.2, 1);
+}
