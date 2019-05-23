@@ -29,7 +29,7 @@ export class AppComponent {
   // ];
 
    const alteArtists = [
-    [['Func 1']],
+    //[['Func 1']],
     [['a']],
     [['b']],
     [['c']],
@@ -48,15 +48,18 @@ export class AppComponent {
         var thisData = event.container.data;
         if(thisData.length > 1) {
             console.log('trasnferrred', thisData);
-            console.log('newData1', newData);
-            var newData =  event.container.data.concat(thisData);
-            this.alteArtists.map(o => {
-              return { newData };
-        });
+            //console.log('newData1', newData);
+            var newData = thisData.concat(thisData);
+            // this.alteArtists.map(o => {
+            //   return { newData };
+            // });
+
+            console.log('newData2', newData);
+            this.alteArtists = newData;
 
         //  var newData =  event.container.data.concat(thisData);
         //  alteArtists.push(newData);
-         console.log('newData2', newData);
+
          console.log('newArray', this.alteArtists);
 
         }
