@@ -16,22 +16,61 @@
 
   <div style="display: flex" class="">
 
-    <div class="list-1" cdkDropList  [cdkDropListData]="artists"
-        [cdkDropListConnectedTo]="secondList" #firstList="cdkDropList"
-        (cdkDropListDropped)="drop($event)" style="width: 30%">
 
-        <div *ngFor="let artist of artists" class="pop" cdkDrag>{{artist}}</div>
 
-    </div>
 
-    <div class="example-list" cdkDropList cdkDropListOrientation="horizontal" [cdkDropListData]="alteArtists"
+
+
+
+
+
+    <div style="position:relative; overflow:hidden; height: 500px; top:350px; left:50%; margin-left:-500px; margin-top:-250px; width:1000px;border:1px green solid;">
+
+
+
+      <div cdkDropList class="example-list2" cdkDropListOrientation="horizontal"
+      [cdkDropListData]="elements"
       [cdkDropListConnectedTo]="firstList" #secondList="cdkDropList"
-      (cdkDropListDropped)="drop($event)" style="width: 90%">
+      (cdkDropListDropped)="drop($event)" style="width: 450px;">
 
-      <div  *ngFor="let artist of alteArtists" class="example-box" cdkDrag>{{artist}}</div>
+            <div *ngFor="let artist of elements" class="elementSmaller horizontal" cdkDrag>{{artist}}</div>
+
+      </div>
+
+
+
+      <div class="list-1" cdkDropList  [cdkDropListData]="artists"
+      [cdkDropListConnectedTo]="secondList" #firstList="cdkDropList"
+      (cdkDropListDropped)="drop($event)" style="width: 30%">
+
+          <div *ngFor="let artist of artists" class="pop" cdkDrag>{{artist}}</div>
+
+      </div>
+
+      <div dropListScroller cdkDropList cdkDropListOrientation="horizontal" class="elements linePosition horizontal"
+      [cdkDropListData]="newElements" (cdkDropListDropped)="drop($event)" >
+        <div class="element horizontal" *ngFor="let tab of newElements" cdkDrag>
+          {{ tab }}
+        </div>
+      </div>
+
+
+
 
     </div>
 
+
+
+
+    <!-- <div>
+      <h2>Vertical</h2>
+      <div dropListScroller cdkDropList cdkDropListLockAxis="y" cdkDropListOrientation="vertical" class="elements"
+          [cdkDropListConnectedTo]="firstList" (cdkDropListDropped)="drop($event)" #secondList="cdkDropList" >
+        <div class="element" *ngFor="let tab of artists" cdkDrag>
+          {{ tab }}
+        </div>
+      </div>
+    </div> -->
 
 
     <!-- <div cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="drop($event)">
@@ -47,5 +86,5 @@
     </div> -->
 
 
-  </div>
+  <!-- </div> -->
 </div>
