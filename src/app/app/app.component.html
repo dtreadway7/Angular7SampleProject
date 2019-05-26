@@ -14,43 +14,56 @@
 
 <div class=".background">
 
+
   <div style="display: flex" class="">
 
+    <div class="main-box">
 
-
-
-
-
-
-
-
-    <div style="position:relative; overflow:hidden; height: 500px; top:350px; left:50%; margin-left:-500px; margin-top:-250px; width:1000px;border:1px green solid;">
-
-
+      <div class="header">
+        <div class="header-name"><h1>CHAINMAKER</h1></div>
+        <div class="header-version">1.0</div>
+      </div>
 
       <div cdkDropList class="example-list2" cdkDropListOrientation="horizontal"
-      [cdkDropListData]="elements"
-      [cdkDropListConnectedTo]="firstList" #secondList="cdkDropList"
-      (cdkDropListDropped)="drop($event)" style="width: 450px;">
+          [cdkDropListData]="elements"
+          [cdkDropListConnectedTo]="firstList"
+          (cdkDropListDropped)="drop($event)"
+          #secondList="cdkDropList">
 
-            <div *ngFor="let artist of elements" class="elementSmaller horizontal" cdkDrag>{{artist}}</div>
+            <div *ngFor="let artist of elements" class="elementSmaller horizontal" cdkDrag>{{artist}}
+
+              <button mat-icon-button>
+                <i class="delete-icon" (click)="deleteIconArrayy(i)"> x </i>
+              </button>
+            </div>
 
       </div>
 
-
-
-      <div class="list-1" cdkDropList  [cdkDropListData]="artists"
-      [cdkDropListConnectedTo]="secondList" #firstList="cdkDropList"
-      (cdkDropListDropped)="drop($event)" style="width: 30%">
+      <div class="list-1" cdkDropList
+          [cdkDropListData]="artists"
+          [cdkDropListConnectedTo]="secondList"
+          (cdkDropListDropped)="drop($event)"
+          #firstList="cdkDropList"
+          style="width: 30%">
 
           <div *ngFor="let artist of artists" class="pop" cdkDrag>{{artist}}</div>
 
       </div>
 
       <div dropListScroller cdkDropList cdkDropListOrientation="horizontal" class="elements linePosition horizontal"
-      [cdkDropListData]="newElements" (cdkDropListDropped)="drop($event)" >
+          [cdkDropListData]="newElements"
+          (cdkDropListDropped)="drop($event)">
+
         <div class="element horizontal" *ngFor="let tab of newElements" cdkDrag>
+
           {{ tab }}
+
+          <button mat-icon-button>
+
+            <i class="delete-icon2" (click)="deleteNewArray(i)"> x </i>
+
+          </button>
+
         </div>
       </div>
 

@@ -1,0 +1,386 @@
+
+
+
+.background{
+  background-color: #353534 !important;
+  height:500px !important;
+  width:800px !important;
+  top:250px !important;
+  margin-top:-250px !important;
+  left:400px !important;
+  margin-left:-400px !important;
+
+}
+
+
+.main-box{
+  position: relative;
+  overflow: hidden;
+  height: 500px;
+  top: 350px;
+  left: 50%;
+  margin-left: -500px;
+  margin-top: -250px;
+  width: 1000px;
+  /* border: 1px green solid; */
+  display: inline-block;
+  /* padding: 15px 25px; */
+  background-color: #efefef;
+  background-image: linear-gradient(#1d1c19, #272726);
+  box-shadow: 0px 0px 11px 11px rgba(0, 0, 0, 0.4);
+}
+
+.main-box:after{
+	// content: '';
+	// position: absolute;
+	// top: 2px;
+	// left: 2px;
+	// width: calc(100% - 4px);
+	// height: 10%;
+  // background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
+  content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(100% - 4px);
+    height: 4%;
+    background: linear-gradient(rgba(255, 255, 255, 0.49), rgba(255, 255, 255, 0.06));
+}
+
+.header{
+  position: absolute;
+  top: 2px;
+  left: 10px;
+  width: 90%;
+  margin-bottom: -40px;
+  z-index: 1;
+
+  h1{
+    color: red;
+    font-family: arial;
+    font-weight: 30px;
+    text-shadow: 0px 2px 2px #000;
+  }
+  .header-name {
+    float:left;
+  }
+  .header-version{
+    float:left;
+    margin-top: -9px;
+    padding-left: 10px;
+    color:#fff;
+    font-size: 42px;
+    //text-shadow: 0px 2px 3px #403f3f;
+
+  }
+
+  .h1-black{
+    color: #000000;
+  }
+}
+
+.list-1{
+  position: relative;
+  top: 27px;
+  background: red;
+  left: 10px;
+  box-shadow: inset 0px 0px 17px 1px black;
+  border: 1px red solid;
+  margin: 0px 0px 0px 0px;
+  width: 30% !important;
+  height: 300px !important;
+  min-height: 322px;
+  overflow: hidden;
+
+}
+
+.list-1:after{
+  content: '1.) Drop icons here. 2.) To make a chain, drop any two or more icons. 3.) New Combinations will appear to the right that can also be dragged to create further complex chains. Chains appear in the area below. 4.) Chained-Objects can be reordered by dragging them to another position in the chain. ';
+	// position: absolute;
+	// top: 2px;
+	// left: 2px;
+	// width: calc(100% - 4px);
+	// height: 50%;
+  // background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
+
+  position: absolute;
+  color: #000;
+  font-family: arial;
+padding-right: 15px;
+  top: 30px;
+  left: 30px;
+  z-index: 0;
+  //width: calc(100% - 0px);
+  //height: 35%;
+
+}
+
+
+.list-2{
+  position: relative;
+  width: 60%;
+  top: 60px;
+  min-width: 65%;
+  height: 316px;
+  margin-bottom: -300px;
+  left: 326px;
+  border: solid 1px #ccc;
+  /* min-height: 322px; */
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.pop{
+  position:absolute;
+  height: 50px;
+  left: 0px;
+  position: relative;
+  margin-left: 0px;
+  // border: 1px solid #ffffff;
+  border-right: 1px solid #000;
+  border-left: 1px solid #000;
+  // border-top: 0px solid #000;
+  border-bottom: 1px solid #000;
+
+  background: #000099;
+  min-height: 60px;
+  display: flex;
+  flex-direction: row;
+  background: rgb(245, 21, 21);
+  background-image: linear-gradient(#e11111, #b70d0d);
+  box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.89);
+  border-radius: 4px;
+  overflow: hidden;
+  color: #ffffff;
+  justify-content: center;
+  align-items: center;
+  font-family: arial;
+  font-size: 10pt;
+  font-weight: bold;
+  border-radius: 2px;
+  text-transform: uppercase;
+  z-index:1;
+}
+.cdk-drop-list-dragging .cdk-drag {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.cdk-drag-animating {
+  transition: transform 300ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+
+// horizontal list item
+.example-list {
+  width: 500px;
+  height:60px;
+  max-width: 500px;
+  border: solid 1px #ccc;
+  min-height: 60px;
+  display: flex;
+  flex-direction: row;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+
+// horizontal list item
+.example-list2 {
+  position: relative;
+  width: 67%;
+  padding: 5px;
+  top: 60px;
+  min-width: 67%;
+  height: 322px;
+  margin-bottom: -289px;
+  left: 319px;
+  /* max-width: 100%; */
+  border: dashed 2px red;
+  min-height: 60px;
+  background: #000000;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+
+.elements {
+  max-height: 250px;
+  max-width: auto;
+  background: white;
+  overflow: hidden;
+  white-space: nowrap;
+
+  &.horizontal {
+    max-width: 100%;
+    margin: 0px 6%;
+  }
+}
+
+.element {
+  position: relative;
+  top: 5px;
+  max-width: 100%;
+  width: 200px;
+  min-width: 200px;
+  display: inline-block;
+  padding: 15px 25px;
+  background-color: #efefef;
+//  / background-image: linear-gradient(#1d1c19, #5f5f5e);
+  background-image: linear-gradient(#2d2c2c, #000000);
+  text-decoration: none;
+  color: #fff;
+  font-size: 25px;
+  font-family: sans-serif;
+  font-weight: 100;
+  box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.89);
+  padding: 32px 10px;
+  border-right: none;
+  border: solid 1px #982020;
+  border-radius: 0px;
+  color: #e33d3d;
+  box-sizing: border-box;
+  cursor: move;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 5px 0px;
+  text-align: center;
+
+  &.horizontal {
+    display: inline-block;
+    margin: 0px 0px 0px 5px;
+  }
+}
+
+.mat-icon-button {
+  padding: 0;
+  min-width: 0;
+  width: 0px;
+  height: 0px;
+  flex-shrink: 0;
+  line-height: 0px;
+  border-radius: 0;
+}
+
+.delete-icon {
+  position: absolute;
+  border-radius: 2px;
+  border: 1px #000 solid;
+  //right: -30px;
+  top: -32px;
+  padding-bottom: 5px;
+  background: url(/assets/img/mins-v3.png) red;
+  height: 20px;
+  width: 20px;
+}
+
+.delete-icon2 {
+  position: absolute;
+  border-radius: 4px;
+  border: 2px #000 solid;
+  right: -68px;
+  top: -47px;
+  padding-bottom: 5px;
+  background: red;
+  height: 27px;
+  width: 25px;
+  z-index: 1;
+}
+
+
+.elementSmaller {
+  max-width: 100%;
+  width: auto;
+  background: #000000;
+  border: solid 2px red;
+  min-width: 66px;
+  padding: 20px 10px;
+  /* border-right: none; */
+  /* border: solid 1px #ccc; */
+  border-radius: 5px;
+  color: rgb(237, 25, 25);
+  box-sizing: border-box;
+  cursor: move;
+  /* background: white; */
+  font-size: 14px;
+  font-weight: bold;
+  /* margin: 5px 10px !important; */
+  text-align: center;
+
+  &.horizontal {
+    display: inline-block;
+    margin: 0px 0px 0px 5px;
+  }
+}
+
+.linePosition{
+  position: relative;
+  top: 40px;
+  /* max-height: 90px; */
+  left: -51px;
+  background: #1d1b1b;
+  box-shadow: inset 0px 0px 19px -3px rgba(0, 0, 0, 0.75);
+  max-width: 100%;
+  height: 97px;
+  border-right: solid #000000 3px;
+  border-left: solid #000000 3px;
+  white-space: nowrap;
+  /* border: 1px red solid; */
+}
+
+
+// .glass{
+// 	/* background styles */
+// 	position: relative;
+// 	display: inline-block;
+// 	padding: 15px 25px;
+// 	background-color: green; /*for compatibility with older browsers*/
+// 	background-image: linear-gradient(green,lightgreen);
+
+// 	/* text styles */
+// 	text-decoration: none;
+// 	color: #fff;
+// 	font-size: 25px;
+// 	font-family: sans-serif;
+// 	font-weight: 100;
+// }
+
+.element:after{
+	content: '';
+	// position: absolute;
+	// top: 2px;
+	// left: 2px;
+	// width: calc(100% - 4px);
+	// height: 50%;
+  // background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: calc(100% - 0px);
+  height: 35%;
+  //background: linear-gradient(rgba(255, 255, 255, 0.56), rgba(103, 103, 103, 0.18));
+  background: linear-gradient(rgba(255, 255, 255, 0.29), rgba(103, 103, 103, 0.2));
+}
+
+.cdk-drag-preview {
+  z-index: 10000000000;
+  width: 200px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.cdk-drop-list-dragging :not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
