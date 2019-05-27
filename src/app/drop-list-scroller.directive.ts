@@ -18,8 +18,6 @@ export class DropListScrollerDirective implements AfterViewInit, OnInit, OnDestr
     y: number;
   }) => void | Cancelable;
 
-
-
   private readonly _subscriptions = new Subscription();
 
   constructor(
@@ -55,7 +53,6 @@ export class DropListScrollerDirective implements AfterViewInit, OnInit, OnDestr
   }
 
   @HostListener('mouseover', ['$event.target.id']) onClick(id: any) {
-    // console.log(`You clicked on ${id}`);
     this._elementRef._draggables.forEach(item => {
       this._subscriptions.add(
         item._dragRef.moved.subscribe(event => {
