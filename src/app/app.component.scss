@@ -280,7 +280,7 @@
 .element {
   position: relative;
   top: 0px;
-  max-width: 100%;
+  //max-width: 100%;
   width: auto;
   min-width: 100px;
   display: inline-block;
@@ -309,6 +309,17 @@
     display: inline-block;
     margin: 0px 0px 0px 5px;
   }
+}
+
+.element:after{
+  content: '';
+  position: absolute;
+  color: red;
+  top: 0px;
+  left: 0px;
+  width: calc(100% - 0px);
+  height: 35%;
+  background: linear-gradient(rgba(255, 255, 255, 0.29), rgba(103, 103, 103, 0.2));
 }
 
 .delete-button1 {
@@ -414,16 +425,6 @@
 
 }
 
-.element:after{
-  content: '';
-  position: absolute;
-  color: red;
-  top: 0px;
-  left: 0px;
-  width: calc(100% - 0px);
-  height: 35%;
-  background: linear-gradient(rgba(255, 255, 255, 0.29), rgba(103, 103, 103, 0.2));
-}
 
 .cdk-drag-preview {
   z-index: 10000000000;

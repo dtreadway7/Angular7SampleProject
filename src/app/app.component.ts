@@ -22,21 +22,7 @@ export class AppComponent {
 
   public artists: Array<array> = [];
 
-  public newElements: Array<array> = ['Example'];
-  // newElements = [
-  //   [['Example']],
-    // [['Example']],
-    // [['Example']],
-    // [['Example']],
-    // [['Example']],
-    // [['Example']],
-    // [['Example']],
-    // [['Example']],
-    // [['Example']],
-    // [['Example']],
-    // [['Example']],
-
-  // ];
+  public newElements: Array<array> = [];
 
   public elements: Array<array> = [
     ['a'],
@@ -84,6 +70,11 @@ export class AppComponent {
     return result;
   }
 
+  enter( event: CdkDragDrop <string[]> ) {
+
+    console.log('entered');
+
+  }
 
 
   drop( event: CdkDragDrop <string[]> ) {
@@ -109,6 +100,14 @@ export class AppComponent {
 
                     this.elements.push( newDataCopy );
                     this.newElements.push( newData );
+
+
+
+                    // OnInit();
+
+
+
+
 
 
               }
