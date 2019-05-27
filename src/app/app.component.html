@@ -14,75 +14,72 @@
 
 <div class=".background">
 
-
   <div style="display: flex" class="">
-
     <div class="main-box">
-
       <div class="header">
+
         <div class="header-name"><h1>CHAINMAKER</h1></div>
         <div class="header-version">1.0</div>
         <div class="author-box">
+
           <div class="author"> DAVID TREADWAY</div>
           <div class="author-title">AN ANGULAR7 WIDGET BY</div>
+
         </div>
+
       </div>
 
       <div class="addContainer">
       <div class="addIcon" (click)="add()" title="Add Item">+</div>
       </div>
 
-      <div cdkDropList class="example-list2" cdkDropListOrientation="horizontal"
+      <div cdkDropList cdkDropListOrientation="horizontal"
+          class="list2"
           [cdkDropListData]="elements"
           [cdkDropListConnectedTo]="firstList"
           (cdkDropListDropped)="drop($event)"
           #secondList="cdkDropList">
 
-            <div *ngFor="let artist of elements" class="elementSmaller horizontal" cdkDrag>{{artist}}
-
-              <button class="delete-button1">
-                <i class="delete-icon" (click)="deleteIconArray(i)"> - </i>
-              </button>
-
-            </div>
+          <div *ngFor="let artist of elements; let i = index;" class="elementSmaller horizontal" cdkDrag> {{ artist }}
+            <button class="delete-button1">
+              <i class="delete-icon" (click)="deleteIconArray(i)"> - </i>
+            </button>
+          </div>
 
       </div>
 
-      <div class="list-1" cdkDropList
+      <div dropListScroller cdkDropList cdkDropListOrientation="vertical"
+          class="list-1"
           [cdkDropListData]="artists"
           [cdkDropListConnectedTo]="secondList"
           (cdkDropListDropped)="drop($event)"
-          #firstList="cdkDropList"
-          style="width: 30%">
+          #firstList="cdkDropList">
 
-          <div *ngFor="let artist of artists" class="pop" cdkDrag>{{artist}}</div>
+          <div *ngFor="let artist of artists; let i = index;" class="pop" cdkDrag> {{ artist }} </div>
 
       </div>
 
-      <div dropListScroller cdkDropList cdkDropListOrientation="horizontal" class="elements linePosition horizontal"
+      <div dropListScroller cdkDropList cdkDropListLockAxis="x" cdkDropListOrientation="horizontal"
+          class="elements linePosition horizontal"
           [cdkDropListData]="newElements"
           (cdkDropListDropped)="drop($event)">
 
-        <div class="element horizontal" *ngFor="let tab of newElements" cdkDrag>
+          <div class="element horizontal" *ngFor="let tab of newElements; let i = index;" cdkDrag>
 
-          {{ tab }}
+            {{ tab }}
 
-          <button class="delete-button2">
+            <button class="delete-button2">
+              <i class="delete-icon2" (click)="deleteNewArray(i)"> - </i>
+            </button>
+            <div class="chain-link"> + </div>
 
-            <i class="delete-icon2" (click)="deleteNewArray(i)"> - </i>
+          </div>
 
-          </button>
-          <div class="chain-link"> + </div>
-
-        </div>
       </div>
 
       <div class="play-button-contaier">
             <button class="play-button" title="Execute Chain"> &#9654; </button>
       </div>
-
-
-
 
     </div>
 

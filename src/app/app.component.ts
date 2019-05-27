@@ -22,7 +22,7 @@ export class AppComponent {
 
   public artists: Array<array> = [];
 
-  public newElements: Array<array> = [['Example']];
+  public newElements: Array<array> = ['Example'];
   // newElements = [
   //   [['Example']],
     // [['Example']],
@@ -39,10 +39,10 @@ export class AppComponent {
   // ];
 
   public elements: Array<array> = [
-    [['a']],
-    [['t']],
-    [['c']],
-    [['g']],
+    ['a'],
+    ['t'],
+    ['c'],
+    ['g'],
   ];
 
 
@@ -51,10 +51,17 @@ export class AppComponent {
   }
 
   deleteNewArray(index: any) {
+    //console.log('new-index', this);
     this.newElements.splice(index,1);
   }
 
   deleteIconArray(index: any) {
+
+
+    //this.elements.find(x => x == this.personId);
+    //this;
+    //this.elements.
+    //console.log('icon-index', index.parentNode.parentNode);
     this.elements.splice(index, 1);
   }
 
@@ -102,6 +109,7 @@ export class AppComponent {
 
                     this.elements.push( newDataCopy );
                     this.newElements.push( newData );
+
 
               }
             }
