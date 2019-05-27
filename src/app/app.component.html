@@ -1,0 +1,109 @@
+<!-- The content below is only a placeholder and can be replaced.
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<ul class="main-nav">
+  <li>
+    <a routerLink="/dnd" class="main-link">DND Section <i class="fa fa-space-shuttle"></i></a>
+  </li>
+</ul>
+
+<router-outlet></router-outlet> -->
+
+<div class=".background">
+
+
+  <div style="display: flex" class="">
+
+    <div class="main-box">
+
+      <div class="header">
+        <div class="header-name"><h1>CHAINMAKER</h1></div>
+        <div class="header-version">1.0</div>
+        <div class="author-box">
+          <div class="author"> DAVID TREADWAY</div>
+          <div class="author-title">AN ANGULAR7 WIDGET BY</div>
+        </div>
+      </div>
+
+      <div cdkDropList class="example-list2" cdkDropListOrientation="horizontal"
+          [cdkDropListData]="elements"
+          [cdkDropListConnectedTo]="firstList"
+          (cdkDropListDropped)="drop($event)"
+          #secondList="cdkDropList">
+
+            <div *ngFor="let artist of elements" class="elementSmaller horizontal" cdkDrag>{{artist}}
+
+              <button class="delete-button1">
+                <i class="delete-icon" (click)="deleteIconArrayy(i)"> - </i>
+              </button>
+
+            </div>
+
+      </div>
+
+      <div class="list-1" cdkDropList
+          [cdkDropListData]="artists"
+          [cdkDropListConnectedTo]="secondList"
+          (cdkDropListDropped)="drop($event)"
+          #firstList="cdkDropList"
+          style="width: 30%">
+
+          <div *ngFor="let artist of artists" class="pop" cdkDrag>{{artist}}</div>
+
+      </div>
+
+      <div dropListScroller cdkDropList cdkDropListOrientation="horizontal" class="elements linePosition horizontal"
+          [cdkDropListData]="newElements"
+          (cdkDropListDropped)="drop($event)">
+
+        <div class="element horizontal" *ngFor="let tab of newElements" cdkDrag>
+
+          {{ tab }}
+
+          <button class="delete-button2">
+
+            <i class="delete-icon2" (click)="deleteNewArray(i)"> - </i>
+
+          </button>
+          <div class="chain-link"> + </div>
+
+        </div>
+      </div>
+
+
+
+
+    </div>
+
+
+
+
+    <!-- <div>
+      <h2>Vertical</h2>
+      <div dropListScroller cdkDropList cdkDropListLockAxis="y" cdkDropListOrientation="vertical" class="elements"
+          [cdkDropListConnectedTo]="firstList" (cdkDropListDropped)="drop($event)" #secondList="cdkDropList" >
+        <div class="element" *ngFor="let tab of artists" cdkDrag>
+          {{ tab }}
+        </div>
+      </div>
+    </div> -->
+
+
+    <!-- <div cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let timePeriod of timePeriods" cdkDrag>{{timePeriod}}</div>
+    </div> -->
+
+    <!-- <div class="dropTarget-1" cdkDropList [cdkDropListData]="alteArtists"
+      [cdkDropListConnectedTo]="firstList" #secondList="cdkDropList"
+      (cdkDropListDropped)="drop($event)" style="width: 30%">
+
+      <div  *ngFor="let artist of alteArtists" class="pop" cdkDrag>{{artist}}</div>
+
+    </div> -->
+
+
+  <!-- </div> -->
+</div>
