@@ -10,6 +10,7 @@ import { Cancelable, debounce } from "lodash";
   selector: "[dropListScroller]"
 })
 export class DropListScrollerDirective implements AfterViewInit, OnDestroy {
+
   private animationFrame: number | undefined;
 
   private debouncedAdjustItemPositions: (position: {
@@ -23,6 +24,7 @@ export class DropListScrollerDirective implements AfterViewInit, OnDestroy {
     private readonly _elementRef: CdkDropList,
     private readonly _zone: NgZone
   ) {
+
     this.debouncedAdjustItemPositions = this.debounceReduce(
       (position: { x: number; y: number }) =>
         this.adjustItemPositions(position),
@@ -56,7 +58,6 @@ export class DropListScrollerDirective implements AfterViewInit, OnDestroy {
 
   private onDragMoved(position: { x: number; y: number }): void {
     this.cancelScroll();
-
     this.animationFrame = requestAnimationFrame(() => this.scroll(position));
   }
 

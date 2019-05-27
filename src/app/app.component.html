@@ -28,6 +28,10 @@
         </div>
       </div>
 
+      <div class="addContainer">
+      <div class="addIcon" (click)="add()" title="Add Item">+</div>
+      </div>
+
       <div cdkDropList class="example-list2" cdkDropListOrientation="horizontal"
           [cdkDropListData]="elements"
           [cdkDropListConnectedTo]="firstList"
@@ -37,7 +41,7 @@
             <div *ngFor="let artist of elements" class="elementSmaller horizontal" cdkDrag>{{artist}}
 
               <button class="delete-button1">
-                <i class="delete-icon" (click)="deleteIconArrayy(i)"> - </i>
+                <i class="delete-icon" (click)="deleteIconArray(i)"> - </i>
               </button>
 
             </div>
@@ -71,6 +75,10 @@
           <div class="chain-link"> + </div>
 
         </div>
+      </div>
+
+      <div class="play-button-contaier">
+            <button class="play-button" title="Execute Chain"> &#9654; </button>
       </div>
 
 

@@ -20,11 +20,7 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 
 export class AppComponent {
 
-  //artists = [];
-
   public artists: Array<array> = [];
-
-
 
   public newElements: Array<array> = [['Example']];
   // newElements = [
@@ -42,36 +38,27 @@ export class AppComponent {
 
   // ];
 
-
   public elements: Array<array> = [
     [['a']],
     [['t']],
     [['c']],
     [['g']],
   ];
-  // elements = [
-
-  //   [['a']],
-  //   [['t']],
-  //   [['c']],
-  //   [['g']],
-
-  // ];
 
 
   add() {
-    this.newElements.push(this.newElements.length + 1);
+    this.elements.push(this.elements.length + 1);
   }
 
   deleteNewArray(index: any) {
     this.newElements.splice(index,1);
   }
 
-  deleteIconArrayy(index: any) {
-    this.elements.splice(index,1);
+  deleteIconArray(index: any) {
+    this.elements.splice(index, 1);
   }
 
-  public findDuplicates ( data ) {
+ findDuplicates ( data ) {
 
     let result = [];
 
@@ -97,44 +84,31 @@ export class AppComponent {
     if ( event.previousContainer !== event.container ) {
         //console.log( 'container', event.container.id );
         var thisData = event.container.data;
-        var newArray = [];
 
-            transferArrayItem( event.previousContainer.data,
-              event.container.data,
+            transferArrayItem( event.previousContainer.data, event.container.data,
                 event.previousIndex, event.currentIndex);
 
-        if ( thisData.length > 1 ) {
+            if ( thisData.length > 1 ) {
+              if ( event.container.id === "cdk-drop-list-1" && thisData.length > 1 ) {
 
-              //newArray.push ( event.previousContainer.data );
+                    // if(this.newElements[0][0][0] && this.newElements[0][0][0] === "Example"){
 
-          if ( event.container.id === "cdk-drop-list-1" && thisData.length > 1 ) {
+                    //   for(var i = 0; i < this.newElements.length; i++ ){
+                    //       this.delete(this.newElements[i]);
+                    //   }
+                    //  }
+                    var newData = thisData.concat ();
+                    var newDataCopy = thisData.concat ();
 
-                // if(this.newElements[0][0][0] && this.newElements[0][0][0] === "Example"){
+                    this.elements.push( newDataCopy );
+                    this.newElements.push( newData );
 
-                //   for(var i = 0; i < this.newElements.length; i++ ){
-                //       this.delete(this.newElements[i]);
-                //   }
-                //  }
-
-
-                var newData = thisData.concat ();
-                var newDataCopy = thisData.concat ();
-
-                this.elements.push( newDataCopy );
-
-                this.newElements.push( newData );
-
-          }
-        }
+              }
+            }
 
     } else {
-      //moveItemInArray(this.newElements, event.previousIndex, event.currentIndex);
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
       console.log('moved');
-
-
-
-
 
     }
   }
