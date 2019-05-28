@@ -45,6 +45,11 @@
 
       </div>
 
+      <div class="chain-count-container">
+
+        <div id="chainCounter" *ngIf="newElements" class="chain-counter" > {{ newElements.length }} </div>
+      </div>
+
       <div dropListScroller cdkDropList cdkDropListLockAxis="x" cdkDropListOrientation="horizontal"
             cdkDropListEntered class="elements linePosition horizontal"
           [cdkDropListData]="newElements"
