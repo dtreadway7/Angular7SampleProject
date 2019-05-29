@@ -65,6 +65,19 @@ export class DropListScrollerDirective implements AfterViewInit, OnInit, OnDestr
     });
   }
 
+  @HostListener('touchmove', ['$event.target.id']) onClick(id: any) {
+    this._elementRef._draggables.forEach(item => {
+      this._subscriptions.add(
+        item._dragRef.moved.subscribe(event => {
+          this.onDragMoved(event.pointerPosition);
+        })
+      );
+      this._subscriptions.add(
+        item._dragRef.ended.subscribe(() => this.onDragEnded())
+      );
+    });
+  }
+
   public ngOnDestroy(): void {
     this._subscriptions.unsubscribe();
   }
