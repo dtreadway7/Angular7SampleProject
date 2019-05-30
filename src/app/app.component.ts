@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-
-import { forEach } from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-root',
@@ -17,33 +14,37 @@ export class AppComponent {
   public newElements: Array<array> = [];
 
   public elements: Array<array> = [
-    ['a'],
-    ['t'],
-    ['c'],
-    ['g'],
+    [ 'a' ],
+    [ 't' ],
+    [ 'c' ],
+    [ 'g' ],
   ];
 
 
-  add() {
-    this.elements.push(this.elements.length + 1);
+  // add drag items
+  add () {
+    this.elements.push ( this.elements.length + 1 );
   }
 
-  deleteNewArray(index: any) {
-    this.newElements.splice(index,1);
+  // delete drag items from bottom list
+  deleteNewArray ( index: any ) {
+    this.newElements.splice( index, 1 );
   }
 
-  deleteIconArray(index: any) {
-    this.elements.splice(index, 1);
+  // delete drag items from top list
+  deleteIconArray ( index: any ) {
+    this.elements.splice( index, 1 );
   }
 
- findDuplicates ( data ) {
+  // find dupes
+  findDuplicates ( data ) {
 
     let result = [];
 
-    data.forEach( function( element, index ) {
-      if ( data.indexOf( element, index + 1 ) > -1 ) {
-        if ( result.indexOf( element ) === -1 ) {
-             result.push( element );
+    data.forEach ( function( element, index ) {
+      if ( data.indexOf ( element, index + 1 ) > -1 ) {
+        if ( result.indexOf ( element ) === -1 ) {
+             result.push ( element );
         }
       }
     });
@@ -51,36 +52,42 @@ export class AppComponent {
     return result;
   }
 
-  chainMethod( obj ) {
-    console.log( obj );
+  // console log
+  chainMethod ( obj ) {
+    console.log ( obj );
     return obj;
   }
 
-
-  clickMethod(name: string) {
-    if(confirm("Functions Chained! Check your console!")) {
-    }
+  // confirmation
+  clickMethod( name: string ) {
+    if( confirm ("Functions Chained! Check your console!") ){}
   }
 
-  playThis( index: any ){
+  // play chain
+  playThis( index: any ) {
 
-    console.log("FUNCTION CHAIN!");
+    console.log( "FUNCTION CHAIN!" );
     for ( let i = 0, len = this.newElements.length; i < len; i++ ) {
-       if( this.newElements[ i ].length > 0 ){
-          for ( let a = 0, alen = this.newElements[ i ].length; a < alen; a++ ) {
-            if( !this.newElements[ i ][ a ].length ){
+
+       if( this.newElements[ i ].length > 0 ) {
+
+        for ( let a = 0, alen = this.newElements[ i ].length; a < alen; a++ ) {
+
+          // if no children
+          if( !this.newElements[ i ][ a ].length ) {
 
               this.chainMethod( this.newElements[ i ][ a ] );
 
-            }
-              if( this.newElements[ i ][ a ].length > 0 ){
-                for ( let c = 0, clen = this.newElements[ i ][ a ].length; c < clen; c++ ) {
+          } // if children
+          if( this.newElements[ i ][ a ].length > 0 ) {
+
+            for ( let c = 0, clen = this.newElements[ i ][ a ].length; c < clen; c++ ) {
 
                     this.chainMethod( this.newElements[ i ][ a ][ c ]);
-                }
-             }
+            }
           }
-       }
+        }
+      }
     }
   }
 
@@ -97,12 +104,15 @@ export class AppComponent {
                   event.previousIndex,
                     event.currentIndex);
 
+            // check if more than 1 drad item in list
             if ( thisData.length > 1 ) {
               if ( event.container.id === "cdk-drop-list-1" && thisData.length > 1 ) {
 
+                    // concat arrays
                     newData = thisData.concat ();
                     newDataCopy = thisData.concat ();
 
+                    // add new items to both array - simple push
                     this.elements.push( newDataCopy );
                     this.newElements.push( newData );
 
