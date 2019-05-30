@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop'
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+
+import { forEach } from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-root',
@@ -46,6 +49,39 @@ export class AppComponent {
     });
 
     return result;
+  }
+
+  chainMethod( obj ) {
+    console.log( obj );
+    return obj;
+  }
+
+
+  clickMethod(name: string) {
+    if(confirm("Functions Chained! Check your console!")) {
+    }
+  }
+
+  playThis( index: any ){
+
+    console.log("FUNCTION CHAIN!");
+    for ( let i = 0, len = this.newElements.length; i < len; i++ ) {
+       if( this.newElements[ i ].length > 0 ){
+          for ( let a = 0, alen = this.newElements[ i ].length; a < alen; a++ ) {
+            if( !this.newElements[ i ][ a ].length ){
+
+              this.chainMethod( this.newElements[ i ][ a ] );
+
+            }
+              if( this.newElements[ i ][ a ].length > 0 ){
+                for ( let c = 0, clen = this.newElements[ i ][ a ].length; c < clen; c++ ) {
+
+                    this.chainMethod( this.newElements[ i ][ a ][ c ]);
+                }
+             }
+          }
+       }
+    }
   }
 
 

@@ -1,0 +1,30 @@
+# DRAG AND DROP FUNCTION CHAINMAKER 
+
+
+2 BREAKPOINTS SUPPORTED: (1) iPhoneX - landscape (2) 1200px browsers and up!
+
+Description:
+This page uses Angular CDK DND (Drag and Drop) to create a simple console with three (3) drag areas.
+
+( container 1) The Right-Side drag area has a dashed border and contains Black Icons with a Red border. Each icon contains a letter of a DNA Base pair. These icons can be dragged into container (2) or deleted, to create chains of DNA base pairs;
+
+( container 2) The Left-Side drag area has a Red Background and is vertically oriented. If more than two items are dragged into this area then a 3rd item is created as the 2 items are combined. The third item shows up on drag container (3) (bottom) and a copy is created in drag container (2). These drag-icons cannot be deleted but can be dragged back into  container (2), on the right, for reuse in new combintations. Once icons are in the right-drag-container they can be deleted. Icons can be sorted and moved vertically via a custom a (scroll directive). 
+
+( container 3) The Bottom drag area is where new combinations show up. These drag-icons can be rearranged for sorting and deleted. This container is also scrollable via a (custom scroll directive).
+
+
+(play-button) The counter in the bottom of the screen is also a play-button. Hit the play-button any time to have the functions chain in the console.
+
+(custom-Scroll-directive) Angular CDK DND has a known issue that once a draggable is placed into overflow, it can no longer be sorted accurately. This is due to an oversight in the development of DND and leaves the dragged items without the ability to report their new positions properly in the hidden area. A new solution was created on Google-Groups to address the issue but the solution was again left with an oversight... the solution was set to initialize on (OnInitView). Of course if the container start out empty then their is no calculation of the drag-items. I was able to fix the solution with @HostEventListener and setup 2 events that reinit the Directive for both mobile and for standard browsers. The solution now has scrollable drag items in both enviroments.
+
+Requirements:
+The Balsamic simple requirement asked for an initial blank area (drop target) that could have preset drag items (foo, add, subtract, doSomething) that could be dragged into the target area and create combinations based on what items were dragged into the target. For extra credit: If one was able to use a former combination in a new combination. The result was a function chain created from combinations of dragged items.
+
+Solution:
+I understood the requirement but realized that long function chains could be created and that there was no way to manage overflow for long chains, nor edit them. My solution allows a user to quickly create long chains of combinations. With this new UX, in a few short swipes, all 2-pair-combinations can be built in seconds. In under 60 seconds 3-chain-combinations can be built and much longer chains can be created very quickly. 
+
+The chains are created in arrays/childArrays and each array can store unlimited number of properties (args) and then a function chain is dynamically created to play each array in the function. Due to the nature of the function/array/chain, the chain can also be reversed, compared, spliced, etc.
+
+In short, a fully scalable chain solution was created with the ability to sort, delete, and manage overflow of chained items.
+
+Enjoy!!!  
