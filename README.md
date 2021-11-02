@@ -1,6 +1,15 @@
 # Dndapp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.3. This app is a simple dra-n-drop UI to show the rapid ability to create combinations of DNA base pairs. It utilizes DND as well as Overflow control. 
+
+Step 1 - Simply drag any 2, or more, existing Bases into the left navigation area to create a new base combination. Any new combination created on the left then can again be dragged back into the right console to create longer combinations (library) to be used as even longer combintations of base pairs. If you create enough combinations on the left, any of the items in the left console can be repositioned in a  vertical scrollable overflow. 
+
+Step 2 - As you build new combinations (on the left) a "chain" of base combinations at the bottom will automatically be created. These chain items are also repositionable via horizontal drag-n-drop.
+
+This demonstrates a simple DND interface that conttrols multiple target areas with both vertical and horizontal overflow in Angular DND. Once proficient a user can quicly create an exponentially large number of pairs in a very short time. 
+
+
+
 
 ## Development server
 
